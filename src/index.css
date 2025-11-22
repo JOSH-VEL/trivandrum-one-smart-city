@@ -1,0 +1,407 @@
+@import url('https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600;700;800;900&family=Poppins:wght@300;400;500;600;700;800;900&display=swap');
+
+@tailwind base;
+@tailwind components;
+@tailwind utilities;
+
+@layer base {
+  :root {
+    /* Light Coastal Trivandrum Theme */
+    --background: 210 40% 98%;
+    --foreground: 215 28% 17%;
+    --card: 0 0% 100%;
+    --card-foreground: 215 28% 17%;
+    --popover: 0 0% 100%;
+    --popover-foreground: 215 28% 17%;
+    
+    /* Primary - Vibrant Ocean Blue */
+    --primary: 200 100% 50%;
+    --primary-foreground: 0 0% 100%;
+    
+    /* Secondary - Soft Teal/Turquoise */
+    --secondary: 174 100% 47%;
+    --secondary-foreground: 0 0% 100%;
+    
+    /* Accent - Coastal Teal */
+    --accent: 169 100% 42%;
+    --accent-foreground: 0 0% 100%;
+    
+    /* Muted */
+    --muted: 210 40% 96%;
+    --muted-foreground: 215 16% 47%;
+    
+    /* Borders and inputs */
+    --border: 210 40% 92%;
+    --input: 210 40% 96%;
+    --ring: 200 100% 50%;
+    
+    /* Status colors */
+    --destructive: 0 84.2% 60.2%;
+    --destructive-foreground: 0 0% 100%;
+    --success: 142 71% 45%;
+    --warning: 38 92% 50%;
+    
+    /* Chart colors - Ocean Blues and Teal */
+    --chart-1: 200 100% 50%;
+    --chart-2: 174 100% 47%;
+    --chart-3: 199 89% 48%;
+    --chart-4: 180 100% 45%;
+    --chart-5: 38 92% 50%;
+    
+    --radius: 0.75rem;
+    
+    /* Fonts */
+    --font-sans: 'Inter', -apple-system, BlinkMacSystemFont, sans-serif;
+    --font-heading: 'Poppins', 'Inter', sans-serif;
+    
+    /* Gradients - Coastal theme */
+    --gradient-primary: linear-gradient(135deg, hsl(200 100% 50%) 0%, hsl(174 100% 47%) 100%);
+    --gradient-secondary: linear-gradient(135deg, hsl(199 89% 48%) 0%, hsl(180 100% 45%) 100%);
+    --gradient-sunset: linear-gradient(135deg, hsl(38 92% 50%) 0%, hsl(0 84% 60%) 100%);
+    --gradient-card: linear-gradient(135deg, hsl(210 40% 99%) 0%, hsl(200 50% 97%) 100%);
+  }
+
+  .dark {
+    --background: 215 28% 17%;
+    --foreground: 0 0% 100%;
+    --card: 220 30% 15%;
+    --card-foreground: 0 0% 100%;
+    --popover: 220 30% 15%;
+    --popover-foreground: 0 0% 100%;
+    
+    --primary: 200 100% 50%;
+    --primary-foreground: 0 0% 100%;
+    
+    --secondary: 174 100% 47%;
+    --secondary-foreground: 0 0% 100%;
+    
+    --accent: 169 100% 42%;
+    --accent-foreground: 0 0% 100%;
+    
+    --muted: 220 25% 20%;
+    --muted-foreground: 215 20.2% 65.1%;
+    
+    --border: 220 20% 25%;
+    --input: 220 20% 25%;
+    --ring: 200 100% 50%;
+    
+    --destructive: 0 62.8% 30.6%;
+    --destructive-foreground: 0 0% 100%;
+    
+    --chart-1: 200 100% 50%;
+    --chart-2: 174 100% 47%;
+    --chart-3: 199 89% 48%;
+    --chart-4: 180 100% 45%;
+    --chart-5: 230 85% 65%;
+  }
+
+  * {
+    @apply border-border;
+  }
+
+  body {
+    @apply bg-background text-foreground;
+    font-family: var(--font-sans);
+    letter-spacing: -0.01em;
+  }
+  
+  h1, h2, h3, h4, h5, h6 {
+    font-family: var(--font-heading);
+    font-weight: 700;
+  }
+  
+  /* High-contrast text colors for readability */
+  :root {
+    --color-heading-main: hsl(215 32% 14%);   /* deep navy for primary headings */
+    --color-heading-sub: hsl(195 85% 28%);    /* teal-blue accent for secondary */
+    --color-body: hsl(215 20% 25%);           /* dark slate for body text */
+    --color-body-light: hsl(215 16% 47%);     /* muted text */
+  }
+  
+  /* Apply high-contrast colors */
+  body {
+    color: var(--color-body);
+  }
+  
+  h1 {
+    color: var(--color-heading-main);
+  }
+  
+  h2 {
+    color: var(--color-heading-sub);
+  }
+  
+  h3, h4, h5, h6 {
+    color: var(--color-heading-main);
+  }
+  
+  .section-title,
+  .card-title,
+  .highlight-text {
+    color: var(--color-heading-main);
+  }
+}
+
+/* Premium Light-Theme Utilities */
+@layer utilities {
+  /* Light Glassmorphism */
+  .glass {
+    background: rgba(255, 255, 255, 0.7);
+    backdrop-filter: blur(20px) saturate(180%);
+    border: 1px solid rgba(200, 210, 220, 0.5);
+    box-shadow: 0 8px 32px 0 rgba(0, 0, 0, 0.08);
+  }
+
+  .glass-premium {
+    background: rgba(255, 255, 255, 0.85);
+    backdrop-filter: blur(24px) saturate(200%);
+    border: 1px solid rgba(174, 200, 215, 0.6);
+    box-shadow: 0 8px 40px 0 rgba(0, 194, 224, 0.12);
+  }
+
+  .glass-cyan {
+    background: linear-gradient(135deg, rgba(0, 194, 224, 0.08), rgba(34, 211, 238, 0.05));
+    backdrop-filter: blur(20px) saturate(180%);
+    border: 1px solid rgba(0, 194, 224, 0.3);
+    box-shadow: 0 8px 32px 0 rgba(0, 194, 224, 0.12);
+  }
+  
+  /* Premium Gradients */
+  .gradient-primary {
+    background: var(--gradient-primary);
+  }
+  
+  .gradient-secondary {
+    background: var(--gradient-secondary);
+  }
+  
+  .gradient-sunset {
+    background: var(--gradient-sunset);
+  }
+  
+  .gradient-card {
+    background: var(--gradient-card);
+  }
+  
+  .text-gradient {
+    background: linear-gradient(135deg, hsl(200 100% 50%), hsl(174 100% 60%));
+    -webkit-background-clip: text;
+    -webkit-text-fill-color: transparent;
+    background-clip: text;
+  }
+  
+  .text-gradient-sunset {
+    background: linear-gradient(135deg, hsl(38 92% 50%), hsl(0 84% 60%));
+    -webkit-background-clip: text;
+    -webkit-text-fill-color: transparent;
+    background-clip: text;
+  }
+  
+  /* Premium Shadows */
+  .shadow-glow {
+    box-shadow: 0 0 60px hsl(200 100% 50% / 0.3);
+  }
+  
+  .shadow-glow-cyan {
+    box-shadow: 0 0 40px hsl(174 100% 47% / 0.3);
+  }
+  
+  .shadow-premium {
+    box-shadow: 0 20px 60px -10px rgba(0, 0, 0, 0.12), 0 0 40px rgba(0, 194, 224, 0.1);
+  }
+  
+  /* Light Adonmo-style card */
+  .adonmo-card {
+    background: linear-gradient(135deg, hsl(210 40% 99%), hsl(200 50% 97%));
+    border: 1px solid rgba(174, 200, 215, 0.4);
+    transition: all 0.3s cubic-bezier(0.4, 0, 0.2, 1);
+  }
+  
+  .adonmo-card:hover {
+    transform: translateY(-4px);
+    border-color: rgba(0, 194, 224, 0.5);
+    box-shadow: 0 20px 60px -10px rgba(0, 0, 0, 0.08), 0 0 40px rgba(0, 194, 224, 0.15);
+  }
+  
+  /* Background variations - Light theme */
+  .bg-navy {
+    background-color: hsl(200 60% 96%);
+  }
+  
+  .bg-navy-darker {
+    background-color: hsl(200 50% 92%);
+  }
+  
+  .bg-navy-lighter {
+    background-color: hsl(210 40% 99%);
+  }
+
+  /* Light theme text colors */
+  .text-navy {
+    color: hsl(215 28% 17%);
+  }
+
+  .text-slate-light {
+    color: hsl(215 16% 47%);
+  }
+}
+
+/* Animations */
+.animate-fade-in {
+  animation: fadeIn 0.4s ease-out;
+}
+
+.animate-slide-up {
+  animation: slideUp 0.6s ease-out;
+}
+
+.animate-slide-in-left {
+  animation: slideInLeft 0.5s ease-out;
+}
+
+.animate-slide-in-right {
+  animation: slideInRight 0.5s ease-out;
+}
+
+.animate-bounce-in {
+  animation: bounceIn 0.7s cubic-bezier(0.68, -0.55, 0.265, 1.55);
+}
+
+.animate-glow {
+  animation: glow 2s ease-in-out infinite;
+}
+
+@keyframes fadeIn {
+  from {
+    opacity: 0;
+  }
+  to {
+    opacity: 1;
+  }
+}
+
+@keyframes slideUp {
+  from {
+    opacity: 0;
+    transform: translateY(40px);
+  }
+  to {
+    opacity: 1;
+    transform: translateY(0);
+  }
+}
+
+@keyframes slideInLeft {
+  from {
+    opacity: 0;
+    transform: translateX(-40px);
+  }
+  to {
+    opacity: 1;
+    transform: translateX(0);
+  }
+}
+
+@keyframes slideInRight {
+  from {
+    opacity: 0;
+    transform: translateX(40px);
+  }
+  to {
+    opacity: 1;
+    transform: translateX(0);
+  }
+}
+
+@keyframes bounceIn {
+  0% {
+    opacity: 0;
+    transform: scale(0.3);
+  }
+  50% {
+    opacity: 1;
+    transform: scale(1.05);
+  }
+  70% {
+    transform: scale(0.9);
+  }
+  100% {
+    transform: scale(1);
+  }
+}
+
+@keyframes glow {
+  0%, 100% {
+    box-shadow: 0 0 20px hsl(200 100% 50% / 0.25);
+  }
+  50% {
+    box-shadow: 0 0 40px hsl(200 100% 50% / 0.5);
+  }
+}
+
+/* Custom scrollbar - Light theme */
+::-webkit-scrollbar {
+  width: 8px;
+  height: 8px;
+}
+
+::-webkit-scrollbar-track {
+  background: hsl(210 40% 96%);
+}
+
+::-webkit-scrollbar-thumb {
+  background: hsl(200 100% 50%);
+  border-radius: 4px;
+}
+
+::-webkit-scrollbar-thumb:hover {
+  background: hsl(200 100% 45%);
+}
+
+/* Landmark Animation Keyframes - Step 1 */
+@keyframes landmark-float {
+  0%, 100% {
+    transform: translateY(0px);
+  }
+  50% {
+    transform: translateY(-8px);
+  }
+}
+
+@keyframes landmark-pulse {
+  0%, 100% {
+    opacity: 1;
+    filter: drop-shadow(0 0 0px hsl(200 100% 50%));
+  }
+  50% {
+    opacity: 0.8;
+    filter: drop-shadow(0 0 8px hsl(200 100% 50%));
+  }
+}
+
+@keyframes landmark-bounce {
+  0%, 100% {
+    transform: translateY(0px) scale(1);
+  }
+  25% {
+    transform: translateY(-6px) scale(1.05);
+  }
+  50% {
+    transform: translateY(0px) scale(1);
+  }
+  75% {
+    transform: translateY(-3px) scale(1.02);
+  }
+}
+
+.animate-landmark-float {
+  animation: landmark-float 3s ease-in-out infinite;
+}
+
+.animate-landmark-pulse {
+  animation: landmark-pulse 2s ease-in-out infinite;
+}
+
+.animate-landmark-bounce {
+  animation: landmark-bounce 2s ease-out infinite;
+}
